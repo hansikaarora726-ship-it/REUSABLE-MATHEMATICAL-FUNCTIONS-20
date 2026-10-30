@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Utility Functions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 450px;
+            margin: auto;
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #6489c7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Math Utility Functions</h1>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+
+    <br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+    function add(a, b) {
+        return a + b;
+    }
+
+    function subtract(a, b) {
+        return a - b;
+    }
+
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    function divide(a, b) {
+        return b === 0 ? "Cannot divide by zero" : a / b;
+    }
+
+    function square(a) {
+        return a * a;
+    }
+
+    function calculate() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+
+        if (document.getElementById("num1").value === "" ||
+            document.getElementById("num2").value === "") {
+            document.getElementById("output").innerHTML =
+                "Please enter both numbers.";
+            return;
+        }
+
+        document.getElementById("output").innerHTML =
+            "Addition: " + add(a, b) + "<br>" +
+            "Subtraction: " + subtract(a, b) + "<br>" +
+            "Multiplication: " + multiply(a, b) + "<br>" +
+            "Division: " + divide(a, b) + "<br>" +
+            "Square of first number: " + square(a);
+    }
+</script>
+
+</body>
+</html>
